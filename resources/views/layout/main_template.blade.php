@@ -11,6 +11,10 @@
     
     @include('fragments/navbar')
 
+    @if (session('status'))
+        {{session('status')}}        
+    @endif
+
     @yield('content')
 </body>
 </html>

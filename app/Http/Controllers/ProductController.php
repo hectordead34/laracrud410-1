@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use App\Models\Product;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -13,9 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $products = Product::get();
+        return view('products_index', compact('products'));
         
-        return view('products_index');
-        echo "Index Productos";
     }
 
     /**
@@ -34,10 +35,11 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        echo "Store Productos";
+        //echo "Store Productos";
         //dd($request);
         //dd($request->all);
         Product::create($request->all());
+        return to_route('products.index')->with('status', 'Producto Registrado');
     }
 
     /**
@@ -45,7 +47,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        echo "Show Productos";
+        return view('products_show', compact('product'));
     }
 
     /**
