@@ -4,6 +4,7 @@
         padding-block: 20px;
         margin-block: -8px;
         margin-inline: -8px;
+        position: sticky;
     }
     nav p{
         font-family: Arial, Helvetica, sans-serif;

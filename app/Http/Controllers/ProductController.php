@@ -14,6 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
+        
         $products = Product::get();
         return view('products_index', compact('products'));
         
@@ -68,11 +69,17 @@ class ProductController extends Controller
         return to_route('products.index') -> with ('status' , 'Producto Actualizado');
     }
 
+    public function delete(Product $product){
+        echo view ('products_delete', compact('product'));
+    }
+    
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Product $product)
     {
-        echo "Destroy Productos";
+        $product->delete();
+        return to_route('products.index')->with('status', 'Producto Eliminado');
     }
+
 }
