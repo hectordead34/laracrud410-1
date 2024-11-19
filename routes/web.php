@@ -53,11 +53,17 @@ Route::get('/products/{product}/delete',
 
 Route::resource('/brands',App\Http\Controllers\BrandController::class);
 
+Route::resource('/clients',App\Http\Controllers\ClientController::class);
+
+Route::resource('/sales',App\Http\Controllers\SaleController::class);
+
+
+/*
 Route::get('/clients', function () {
     return view('clients_index');
 }) -> name ("clients");
 
 Route::get('/sale', function () {
     return view('sales_index');
-}) -> name ("sales");
+}) -> name ("sales");*/
 

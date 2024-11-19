@@ -14,7 +14,7 @@ class BrandController extends Controller
     public function index()
     {
         $brands = Brand::get();
-        return view('brands_show', compact('brands'));
+        return view('Dashboard/brands/show', compact('brands'));
     }
 
     /**
@@ -22,7 +22,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('brands_create');
+        return view('Dashboard/brands/create');
     }
 
     /**
@@ -40,7 +40,7 @@ class BrandController extends Controller
     public function show(Brand $brand)
     {
         
-        return view('brands_show', compact('brand'));
+        return view('Dashboard/brands/show', compact('brand'));
     }
 
     /**
@@ -48,7 +48,7 @@ class BrandController extends Controller
      */
     public function edit(Brand $brand)
     {
-        echo view ('brands_edit',compact('brand',));
+        echo view ('Dashboard/brands/edit',compact('brand',));
     }
 
     /**

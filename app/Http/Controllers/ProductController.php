@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         
         $products = Product::get();
-        return view('products_index', compact('products'));
+        return view('Dashboard/products/index', compact('products'));
         
     }
 
@@ -28,7 +28,7 @@ class ProductController extends Controller
         //$brands = Brand::get(); Para obtener todos los datos de un modelo o tabla
         $brands = Brand::pluck('id','brand');//obtener datos especificos
         //dd($brands);//Verificar que los datos se esten extrayendo
-        return view('products_create', compact('brands'));
+        return view('Dashboard/products/create', compact('brands'));
     }
 
     /**
@@ -48,7 +48,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products_show', compact('product'));
+        return view('Dashboard/products/show', compact('product'));
     }
 
     /**
@@ -57,7 +57,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $brands = Brand::pluck('id','brand');
-        echo view ('products_edit',compact('brands','product'));
+        echo view ('Dashboard/products/edit',compact('brands','product'));
     }
 
     /**
@@ -70,7 +70,7 @@ class ProductController extends Controller
     }
 
     public function delete(Product $product){
-        echo view ('products_delete', compact('product'));
+        echo view ('Dashboard/products/delete', compact('product'));
     }
     
     /**
