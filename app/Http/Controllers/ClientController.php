@@ -12,7 +12,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view ('Dashboard/clients/index');
+        $clients = Client::get();
+        return view ('Dashboard/clients/index', compact('clients'));
     }
 
     /**
@@ -20,7 +21,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('Dashboard/clients/create');
     }
 
     /**
@@ -28,7 +29,8 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Client::create($request->all());
+        return to_route('clients.index')->with('status', 'Cliente Registrado');
     }
 
     /**
