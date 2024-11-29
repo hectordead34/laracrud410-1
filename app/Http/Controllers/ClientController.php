@@ -38,7 +38,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        return view('Dashboard/clients/show', compact('client'));
     }
 
     /**
@@ -46,7 +46,7 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        echo view ('Dashboard/clients/edit', compact('client'));
     }
 
     /**
@@ -54,7 +54,8 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        //
+        $client->update($request->all());
+        return to_route('clients.index') -> with('status', 'Producto Actualizado');
     }
 
     /**
