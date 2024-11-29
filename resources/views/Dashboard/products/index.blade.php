@@ -11,7 +11,7 @@
 
 
     <br>
-    <table>
+    <table class="table table-bordered border-secondary">
         <thead>
             <th>Nombre del Producto</th>
             <th>Marca</th>
@@ -31,9 +31,9 @@
                     <td>{{$p->unit_price}}</td>
                     <td><img src="image/products/{{$p->imagen}}" width="150" height="110" alt=""></td>
                     <td>
-                        <button><a href="{{route("products.show", $p)}}">Mostrar</a></button>
+                        <button type="button" class="btn btn-primary" href="{{route("products.show", $p)}}">Mostrar</button>
                         <button><a href="{{route("products.edit", $p)}}">Editar</a></button>
-                        <button><a href="{{route("products.delete", $p)}}">Eliminar</a></button>
+                        <button type="button" class="btn btn-danger"><a href="{{route("products.delete", $p)}}">Eliminar</a></button>
                     </td>
                 </tr>
             @endforeach
