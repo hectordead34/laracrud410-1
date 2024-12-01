@@ -1,15 +1,15 @@
 @extends('layout/main_template')
 
 @section('content')
-    <h1>Index Productos</h1>
+    <h1>Productos</h1>
     <br>
     
-    <button><a href="{{route('products.create')}}">Crear Producto</a></button>
-    <button><a href="{{route('products.index')}}">Mostrar Producto</a></button>
-    <button><a href="{{route('brands.create')}}">Crear Marca</a></button>
-    <button><a href="{{route('brands.index')}}">Mostrar Marca</a></button>
 
+    <a class="btn btn-primary" href="{{route('products.create')}}" role="button">Crear Producto</a>
+    <a class="btn btn-primary" href="{{route('brands.create')}}">Crear Marca</a>
+    <a class="btn btn-primary" href="{{route('brands.index')}}">Mostrar Marcas</a>
 
+    <br>
     <br>
     <table class="table table-bordered border-secondary">
         <thead>
@@ -31,9 +31,9 @@
                     <td>{{$p->unit_price}}</td>
                     <td><img src="image/products/{{$p->imagen}}" width="150" height="110" alt=""></td>
                     <td>
-                        <button type="button" class="btn btn-primary" href="{{route("products.show", $p)}}">Mostrar</button>
-                        <button><a href="{{route("products.edit", $p)}}">Editar</a></button>
-                        <button type="button" class="btn btn-danger"><a href="{{route("products.delete", $p)}}">Eliminar</a></button>
+                        <a class="btn btn-primary" href="{{route("products.show", $p)}}" role="button">Mostrar</a>
+                        <a class="btn btn-success" href="{{route("products.edit", $p)}}" role="button">Editar</a>
+                        <a class="btn btn-danger" href="{{route("products.delete", $p)}}" role="button">Eliminar</a>
                     </td>
                 </tr>
             @endforeach

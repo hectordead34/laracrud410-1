@@ -39,20 +39,24 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{{route('index')}}"><i class="fa-solid fa-dragon"></i>           Inicio</a>
+      <h3 class="navbar-brand"><i class="fa-brands fa-weibo"></i> Tiendita</h3>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{route('products.index')}}">Productos</a>
+            <a class="nav-link" href="{{route('index')}}"><i class="fa-solid fa-house"></i> Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('clients.index')}}">Clientes</a>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('products.index')}}"><i class="fa-solid fa-cart-shopping"></i> Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('sales.index')}}">Ventas</a>
+            <a class="nav-link" href="{{route('clients.index')}}"><i class="fa-solid fa-user"></i>Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('sales.index')}}"><i class="fa-solid fa-tag"></i> Ventas</a>
           </li>
         </ul>
       </div>

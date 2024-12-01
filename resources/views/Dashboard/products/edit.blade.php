@@ -34,7 +34,7 @@
     <label for="">Precio Unitario</label>
     <input type="text" name="unit_price" value="{{$product->unit_price}}">
 
-    <label for="">Imagen</label>
+    <label for=""><i class="fa-solid fa-upload"></i> Imagen</label>
     <input type="file" name="imagen">
 
     <button type="submit">Registrar</button>
