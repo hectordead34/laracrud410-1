@@ -57,6 +57,8 @@ Route::resource('/clients',App\Http\Controllers\ClientController::class);
 
 Route::resource('/sales',App\Http\Controllers\SaleController::class);
 
+Route::resource('/addresses',App\Http\Controllers\AddressController::class);
+
 
 /*
 Route::get('/clients', function () {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\Client;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('Dashboard/clients/create');
+        $addresses = Address::pluck('id','street');
+        return view('Dashboard/clients/create', compact('addresses'));
     }
 
     /**

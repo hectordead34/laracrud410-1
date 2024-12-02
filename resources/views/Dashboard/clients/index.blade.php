@@ -5,7 +5,9 @@
 
 
 <h1>Clientes</h1>
-<a class="btn btn-primary" href="{{route('clients.create')}}" role="button">Crear Cliente</a></button>
+    <a class="btn btn-primary" href="{{route('clients.create')}}" role="button">Crear Cliente</a></button>
+    <a class="btn btn-primary" href="{{route('addresses.create')}}" role="button">Crear Dirección</a>
+    <a class="btn btn-primary" href="{{route('addresses.show')}}" role="button">Mostrar Direcciones</a>
 <br>
 <br>
 <table class="table table-bordered table-striped">
