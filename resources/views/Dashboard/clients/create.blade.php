@@ -9,25 +9,25 @@
 <form action="{{route('clients.store')}}" method="POST">
     @csrf
     <label for="">Nombre del Cliente</label>
-    <input type="text" name="nameProduct">
+    <input type="text" name="name">
 
     <label for="">Apellido</label>
-    <input type="text" name="nameProduct">
+    <input type="text" name="last_name">
 
     <label for="">Segundo Apellido</label>
-    <input type="text" name="nameProduct">
+    <input type="text" name="second_last_name">
 
     <label for="">Correo</label>
-    <input type="text" name="stock">
+    <input type="text" name="email">
     
     <label for="">Telefono</label>
-    <input type="number" name="unit_price">
+    <input type="number" name="phone">
 
     <label for="">Estado</label>
-    <input type="text" name="imagen">
+    <input type="text" name="state">
 
-    <label for="">Town</label>
-    <input type="text" name="nameProduct">
+    <label for="">Ciudad</label>
+    <input type="text" name="town">
 
     <button type="submit">Registrar</button>
 </form>

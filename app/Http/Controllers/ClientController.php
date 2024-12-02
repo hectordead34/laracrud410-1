@@ -55,7 +55,7 @@ class ClientController extends Controller
     public function update(Request $request, Client $client)
     {
         $client->update($request->all());
-        return to_route('clients.index') -> with('status', 'Producto Actualizado');
+        return to_route('clients.index') -> with('status', 'Cliente Actualizado');
     }
 
     /**

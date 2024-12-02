@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sale;
+use App\Models\Client;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -12,7 +14,8 @@ class SaleController extends Controller
      */
     public function index()
     {
-        return view('Dashboard.sales.index');
+        $sales = Sale::paginate(4);
+        return view('Dashboard/sales/index', compact('sales'));
     }
 
     /**
@@ -20,7 +23,9 @@ class SaleController extends Controller
      */
     public function create()
     {
-        //
+        $clients = Client::pluck('id','name');
+        $products = Product::pluck('id','nameProduct');
+        return view('Dashboard/sales/create', compact('clients', 'products'));
     }
 
     /**
@@ -28,7 +33,8 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Sale::create($request->all());
+        return to_route('sales.index')->with('status','Venta Registrada');
     }
 
     /**

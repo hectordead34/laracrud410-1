@@ -3,11 +3,12 @@
 @section('content')
 <h1>Index Marcas</h1>
 <br>
-    <button><a href="{{route('brands.create')}}">Crear Marca</a></button>
-<table>
+    <a class="btn btn-primary" href="{{route('brands.create')}}" role="button">Crear Marca</a></button>
+<table class="table table-bordered table-striped">
     <thead>
         <th>Nombre de la Marca</th>
         <th>Descripcion de la Marca</th>
+        <th>Acciones</th>
     </thead>
     <tbody>
         @foreach ($brands as $b)

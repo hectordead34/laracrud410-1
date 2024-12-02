@@ -2,9 +2,24 @@
 
 @section('content')
 
-<h1>Detalles del Cliente</h1>
-<h3>Cliente: {{$client->name}}</h3>
-<h3>Apellido: {{$client->last_name}}</h3>
+<table class="table" >
+    <thead class="table-dark">
+        <th><th>Detalles del Cliente</th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Cliente:</td>
+            <td>{{$client->name}}</td>
+        </tr>
+        <tr>
+            <td>Apellido:</td>
+            <td>{{$client->last_name}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3></h3>
+<h3> </h3>
 <h3>Segundo Apellido: {{$client->second_last_name}}</h3>
 <h3>Email: {{$client->email}}</h3>
 <h3>Telefono: {{$client->phone}}</h3>

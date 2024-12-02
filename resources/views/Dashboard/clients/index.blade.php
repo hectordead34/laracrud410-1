@@ -5,11 +5,10 @@
 
 
 <h1>Clientes</h1>
-<button><a href="{{route('clients.create')}}">Crear Cliente</a></button>
-<button><a href="{{route('clients.index')}}">Mostrar Cliente</a></button>
+<a class="btn btn-primary" href="{{route('clients.create')}}" role="button">Crear Cliente</a></button>
 <br>
 <br>
-<table>
+<table class="table table-bordered table-striped">
     <thead>
         <th>Nombre del Cliente</th>
         <th>Apellido</th>
@@ -18,7 +17,7 @@
         <th>Telefono</th>
         <th>Estado</th>
         <th>Ciudad</th>
-        <th>ACCIONES</th>
+        <th>Acciones</th>
     </thead>
     <tbody>
         @foreach ($clients as $c)
