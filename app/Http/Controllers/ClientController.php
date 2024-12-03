@@ -61,11 +61,16 @@ class ClientController extends Controller
         return to_route('clients.index') -> with('status', 'Cliente Actualizado');
     }
 
+    public function delete(Client $client){
+        echo view ('Dashboard/clients/delete', compact('client'));
+    }
+    
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Client $client)
     {
-        //
+        $client->delete();
+        return to_route('clients.index')->with('status', 'Client Eliminado');
     }
 }

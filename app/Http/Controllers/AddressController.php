@@ -66,8 +66,9 @@ class AddressController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Address $address)
     {
-        //
+        $address->delete();
+        return to_route('addresses.index')->with('status', 'Dirección Eliminada');
     }
 }

@@ -36,7 +36,7 @@
                 <td>
                     <a class="btn btn-primary" href="{{route("clients.show", $c)}}" role="button"><i class="fa-solid fa-circle-info"></i></a>
                     <a class="btn btn-success" href="{{route("clients.edit", $c)}}"  role="button"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a class="btn btn-danger" href="{{route("clients.destroy", $c)}}"  role="button"><i class="fa-solid fa-trash"></i></a>
+                    <a class="btn btn-danger" href="{{route("clients.delete", $c)}}"  role="button"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
         @endforeach

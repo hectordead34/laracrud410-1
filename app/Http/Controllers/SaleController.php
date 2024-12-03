@@ -64,11 +64,15 @@ class SaleController extends Controller
         return to_route('sales.index') -> with ('status' , 'Venta Actualizado');
     }
 
+    public function delete(Sale $sale){
+        echo view ('Dashboard/sales/delete', compact('sale'));
+    }
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Sale $sale)
     {
-        //
+        $sale->delete();
+        return to_route('sales.index')->with('status', 'Venta Eliminado');
     }
 }
