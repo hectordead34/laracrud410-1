@@ -18,8 +18,12 @@ return new class extends Migration
             $table->string('second_last_name', 40)->nullable()->default('apellido_materno');
             $table->string('email', 50)->nullable()->default('email@gmail.com');
             $table->integer('phone')->nullable()->default(1234567890);
+            $table->foreignId('address_id');
             $table->string('state', 40)->nullable()->default('Veracruz');
             $table->string('town', 40)->nullable()->default('Gtz. Zamora');
+
+            $table->foreign('address_id')->references('id')->on('addresses')
+            ->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

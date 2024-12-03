@@ -13,7 +13,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = Brand::get();
+        $brands = Brand::paginate(4);
         return view('Dashboard/brands/index', compact('brands'));
     }
 
@@ -31,7 +31,7 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         Brand::create($request->all());
-        return to_route('products.index')->with('status', 'Marca Registrada');
+        return to_route('brands.index')->with('status', 'Marca Registrada');
     }
 
     /**

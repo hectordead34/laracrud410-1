@@ -59,12 +59,6 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        if(isset($data["imagen"])){
-            //Cambiar el nombre del archivo a cargar
-            $data["imagen"] = $filename = time(). ".".$data["imagen"]->extension();
-            //Guardar imagen en la carpeta pùblica
-            $product->imagen->move(public_path("image/products"), $filename);
-        }
         
         return view('Dashboard/products/show', compact('product'));
     }

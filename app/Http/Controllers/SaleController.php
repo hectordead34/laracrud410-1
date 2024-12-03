@@ -42,7 +42,7 @@ class SaleController extends Controller
      */
     public function show(Sale $sale)
     {
-        //
+        return view('Dashboard/sales/show', compact('sale'));
     }
 
     /**
@@ -50,7 +50,9 @@ class SaleController extends Controller
      */
     public function edit(Sale $sale)
     {
-        //
+        $clients = Client::pluck('id','name');
+        $products = Product::pluck('id','nameProduct');
+        echo view ('Dashboard/sales/edit',compact('sale',"clients","products"));
     }
 
     /**
@@ -58,7 +60,8 @@ class SaleController extends Controller
      */
     public function update(Request $request, Sale $sale)
     {
-        //
+        $sale->update($request->all());
+        return to_route('sales.index') -> with ('status' , 'Venta Actualizado');
     }
 
     /**

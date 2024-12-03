@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Address;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class AddressController extends Controller
@@ -36,25 +37,26 @@ class AddressController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Address $address)
     {
-        //
+        return view('Dashboard/addresses/show', compact('address'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Address $address)
     {
-        //
+        echo view ('Dashboard/addresses/edit',compact('address'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,Address $address)
     {
-        //
+        $address->update($request->all());
+        return to_route('addresses.index') -> with ('status' , 'Dirección Actualizado');
     }
 
     public function delete(Address $address){

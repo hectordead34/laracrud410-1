@@ -4,37 +4,37 @@
 
 @include('fragments.formstyles')
 
-<h1>Editar Marcas</h1>
+<h1>Editar Direcciones</h1>
 
-<form action="{{route('brands.update', $address->id)}}" method="POST">
+<form action="{{route('addresses.update', $address->id)}}" method="POST">
     @csrf
     @method('PUT')
     <label for="">Calle</label>
-    <input type="text" name="street" value="{{$address->}}">
+    <input type="text" name="street" value="{{$address->street}}">
 
     <label for="">N° Interior</label>
-    <input type="int" name="internal_num" value="{{$address->}}">
+    <input type="int" name="internal_num" value="{{$address->internal_num}}">
 
     <label for="">N° Exterior</label>
-    <input type="int" name="external_num" value="{{$address->}}">
+    <input type="int" name="external_num" value="{{$address->external_num}}">
 
     <label for="">Vecindario</label>
-    <input type="text" name="neighborhood" value="{{$address->}}">
+    <input type="text" name="neighborhood" value="{{$address->neighborhood}}">
     
     <label for="">Ciudad</label>
-    <input type="text" name="town" value="{{$address->}}">
+    <input type="text" name="town" value="{{$address->town}}">
 
     <label for="">Estado</label>
-    <input type="text" name="state" value="{{$address->}}">
+    <input type="text" name="state" value="{{$address->state}}">
 
     <label for="">País</label>
-    <input type="text" name="country" value="{{$address->}}">
+    <input type="text" name="country" value="{{$address->country}}">
     
     <label for="">Codigo Postal</label>
-    <input type="int" name="postal_code" value="{{$address->}}">
+    <input type="int" name="postal_code" value="{{$address->postal_code}}">
 
     <label for="">Referencias</label>
-    <input type="text" name="references" value="{{$address->}}">
+    <input type="text" name="references" value="{{$address->references}}">
     
     
     <button type="submit">Registrar</button>

@@ -41,5 +41,5 @@
             @endforeach
     </tbody>
 </table>
-
+{{$addresses->links()}}
 @endsection

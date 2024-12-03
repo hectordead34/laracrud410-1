@@ -17,6 +17,7 @@
         <th>Segundo Apellido </th>
         <th>Correo</th>
         <th>Telefono</th>
+        <th>Dirección</th>
         <th>Estado</th>
         <th>Ciudad</th>
         <th>Acciones</th>
@@ -29,6 +30,7 @@
                 <td>{{$c->second_last_name}}</td>
                 <td>{{$c->email}}</td>
                 <td>{{$c->phone}}</td>
+                <td>{{$c->address->street}}</td>
                 <td>{{$c->state}}</td>
                 <td>{{$c->town}}</td>
                 <td>
@@ -40,4 +42,5 @@
         @endforeach
     </tbody>
 </table>
+{{$clients->links()}} 
 @endsection

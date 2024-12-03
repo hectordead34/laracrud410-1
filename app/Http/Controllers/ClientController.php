@@ -13,7 +13,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::get();
+        $clients = Client::paginate(4);
         return view ('Dashboard/clients/index', compact('clients'));
     }
 
@@ -48,7 +48,8 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        echo view ('Dashboard/clients/edit', compact('client'));
+        $addresses = Address::pluck('id','street');
+        echo view ('Dashboard/clients/edit', compact('client','addresses'));
     }
 
     /**

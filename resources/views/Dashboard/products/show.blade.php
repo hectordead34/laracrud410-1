@@ -3,7 +3,7 @@
 @section('content')
 
 <div style="text-align: center">
-    <br>
+    <br>    
 <center>
 <table  class="table table-bordered" style="width: 25%; border:2px; border-radius:100% " > 
     <thead class="table-dark">
@@ -11,9 +11,17 @@
         <th></th>
     </thead>
     <tbody>
-        <tr style="align=center; bottom:middle">
+        <tr>
             <td>Producto</td>
             <td>{{$product->nameProduct}}</td>
+        </tr>
+        <tr>
+            <td>Marca</td>
+            <td>{{$product->brand->brand}}</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>{{$product->brand->description}}</td>
         </tr>
         <tr>
             <td>Cantidad</td>

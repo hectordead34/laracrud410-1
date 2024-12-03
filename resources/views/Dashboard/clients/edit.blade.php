@@ -31,6 +31,15 @@
 
     <label for="">Telefono</label>
     <input type="text" name="phone" value="{{$client->phone}}">
+
+    <label for="">Dirección</label>
+    <select name= "address_id">
+        <option value="">Selecciona. . .</option>
+        @foreach ($addresses as $address => $id )
+        <option {{$client->address_id == $id ? 'selected' : ''}} value="{{$id}}">{{$address}}</option>
+            
+        @endforeach
+    </select>
     
     <label for="">Estado</label>
     <input type="text" name="state" value="{{$client->state}}">

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Client extends Model
 {
@@ -15,7 +16,12 @@ class Client extends Model
         'second_last_name',
         'email',
         'phone',
+        'address_id',
         'state',
         'town'
     ];
+
+    public function address():BelongsTo{
+        return $this->belongsTo(Address::class, 'address_id');
+    }
 }
