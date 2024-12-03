@@ -12,8 +12,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::get();
-        return view ('Dashboard/clients/index', compact('clients'));
+        $clients = Client::all();  
+        return view('Dashboard/clients/index', compact('clients'));
     }
 
     /**
@@ -29,8 +29,18 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        Client::create($request->all());
-        return to_route('clients.index')->with('status', 'Cliente Registrado');
+       $request->validate([
+        'name' => 'required|string|max:255',
+        'last_name' => 'required|string|max:255',
+        'second_last_name' => 'nullable|string|max:255',
+        'email' => 'required|email|unique:clients,email',
+        'phone' => 'required|numeric',
+        'state' => 'required|string|max:255',
+        'town' => 'required|string|max:255',
+    ]);
+    Client::create($request->all());
+
+    return to_route('clients.index')->with('status', 'Cliente Registrado');
     }
 
     /**
@@ -38,7 +48,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        return view('Dashboard/clients/show', compact('client'));
     }
 
     /**
@@ -46,7 +56,7 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        return view('Dashboard/clients/edit', compact('client'));
     }
 
     /**
@@ -54,7 +64,17 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        //
+         $request->validate([
+            'name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'second_last_name' => 'nullable|string|max:255',
+            'email' => 'required|email|unique:clients,email,' . $client->id,
+            'phone' => 'required|numeric',
+            'state' => 'required|string|max:255',
+            'town' => 'required|string|max:255',
+        ]);
+        $client->update($request->all());
+         return to_route('clients.index')->with('status', 'Cliente Actualizado');
     }
 
     /**
@@ -62,6 +82,7 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        $client->delete();
+        return to_route('clients.index')->with('status', 'Cliente Eliminado');
     }
 }

@@ -7,10 +7,11 @@
     <title>Laracrud</title>
 
 </head>
-<body style="background-color: rgb(225, 210, 180)">
+<body style="background-color: rgb(199, 199, 199)">
     
     @include('fragments/navbar')
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     @if (session('status'))
         {{session('status')}}        
     @endif
@@ -18,3 +19,4 @@
     @yield('content')
 </body>
 </html>
+
