@@ -14,7 +14,7 @@ class BrandController extends Controller
     public function index()
     {
         $brands = Brand::get();
-        return view('Dashboard/brands/show', compact('brands'));
+        return view('Dashboard/brands/index', compact('brands'));
     }
 
     /**
@@ -58,6 +58,10 @@ class BrandController extends Controller
     {
         $brand->update($request->all());//actualizamos los datos en la base de datos
         return to_route('brands.index') -> with ('status' , 'Marca Actualizada');
+    }
+
+    public function delete(Brand $brand){
+        echo view ('Dashboard/brands/delete', compact('brand'));
     }
 
     /**

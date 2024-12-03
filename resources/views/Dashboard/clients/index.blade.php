@@ -7,7 +7,7 @@
 <h1>Clientes</h1>
     <a class="btn btn-primary" href="{{route('clients.create')}}" role="button">Crear Cliente</a></button>
     <a class="btn btn-primary" href="{{route('addresses.create')}}" role="button">Crear Dirección</a>
-    <a class="btn btn-primary" href="{{route('addresses.show')}}" role="button">Mostrar Direcciones</a>
+    <a class="btn btn-primary" href="{{route('addresses.index')}}" role="button">Mostrar Direcciones</a>
 <br>
 <br>
 <table class="table table-bordered table-striped">
@@ -32,9 +32,9 @@
                 <td>{{$c->state}}</td>
                 <td>{{$c->town}}</td>
                 <td>
-                    <button><a href="{{route("clients.show", $c)}}">Mostrar</a></button>
-                    <button><a href="{{route("clients.edit", $c)}}">Editar</a></button>
-                    <button><a href="{{route("clients.destroy", $c)}}">Eliminar</a></button>
+                    <a class="btn btn-primary" href="{{route("clients.show", $c)}}" role="button"><i class="fa-solid fa-circle-info"></i></a>
+                    <a class="btn btn-success" href="{{route("clients.edit", $c)}}"  role="button"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a class="btn btn-danger" href="{{route("clients.destroy", $c)}}"  role="button"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
         @endforeach

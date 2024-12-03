@@ -33,9 +33,9 @@
                     <td>{{$p->unit_price}}</td>
                     <td><img src="image/products/{{$p->imagen}}" width="150" height="110" alt=""></td>
                     <td>
-                        <a class="btn btn-primary" href="{{route("products.show", $p)}}" role="button">Mostrar</a>
-                        <a class="btn btn-success" href="{{route("products.edit", $p)}}" role="button">Editar</a>
-                        <a class="btn btn-danger" href="{{route("products.delete", $p)}}" role="button">Eliminar</a>
+                        <a class="btn btn-primary" href="{{route("products.show", $p)}}" role="button"><i class="fa-solid fa-circle-info"></i></a>
+                        <a class="btn btn-success" href="{{route("products.edit", $p)}}" role="button"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="btn btn-danger" href="{{route("products.delete", $p)}}" role="button"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             @endforeach

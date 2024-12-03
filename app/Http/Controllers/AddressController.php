@@ -13,7 +13,7 @@ class AddressController extends Controller
     public function index()
     {
         $addresses = Address::paginate(4);
-        return view("Dashboar/addresses/show", compact('addresses'));
+        return view("Dashboard/addresses/index", compact('addresses'));
     }
 
     /**
@@ -29,7 +29,8 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Address::create($request->all());
+        return to_route('addresses.index')->with('status', 'Dirección Registrada');
     }
 
     /**
@@ -54,6 +55,10 @@ class AddressController extends Controller
     public function update(Request $request, string $id)
     {
         //
+    }
+
+    public function delete(Address $address){
+        echo view ('Dashboard/addresses/delete', compact('address'));
     }
 
     /**

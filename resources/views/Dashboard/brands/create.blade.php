@@ -4,7 +4,7 @@
 
 @include('fragments.formstyles')
 
-<h1>Create de Productos</h1>
+<h1>Create de Marcas</h1>
 
 <form action="{{route('brands.store')}}" method="POST">
     @csrf

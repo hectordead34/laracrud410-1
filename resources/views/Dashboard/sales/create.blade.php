@@ -4,7 +4,7 @@
 
 @include('fragments.formstyles')
 
-<h1>Crear Ventas</h1>
+<h1>Create de Ventas</h1>
 
 @if($errors->any())
     @foreach ($errors->all() as $e)

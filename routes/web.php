@@ -53,11 +53,23 @@ Route::get('/products/{product}/delete',
 
 Route::resource('/brands',App\Http\Controllers\BrandController::class);
 
+Route::get('/brands/{brand}/delete',
+[App\Http\Controllers\BrandController::class, 'delete'])-> name('brands.delete');
+
 Route::resource('/clients',App\Http\Controllers\ClientController::class);
+
+Route::get('/clients/{client}/delete',
+[App\Http\Controllers\ClientController::class, 'delete'])-> name('clients.delete');
 
 Route::resource('/sales',App\Http\Controllers\SaleController::class);
 
+Route::get('/sales/{sale}/delete',
+[App\Http\Controllers\SaleController::class, 'delete'])-> name('sales.delete');
+
 Route::resource('/addresses',App\Http\Controllers\AddressController::class);
+
+Route::get('/addresses/{address}/delete',
+[App\Http\Controllers\AddressController::class, 'delete'])-> name('addresses.delete');
 
 
 /*

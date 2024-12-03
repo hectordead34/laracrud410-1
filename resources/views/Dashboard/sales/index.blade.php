@@ -7,7 +7,7 @@
     <br>
     
 
-    <a class="btn btn-primary" href="{{route('sales.create')}}" role="button">Crear Ventas</a>
+    <a class="btn btn-primary" href="{{route('sales.create')}}" role="button">Crear Venta</a>
 
     <br>
     <br>
@@ -29,9 +29,9 @@
                     <td>{{$s->product->unit_price}}</td>
                     <td>{{$s->sale_date}}</td>
                     <td>
-                        <a class="btn btn-primary" href="{{route("sales.show", $s)}}" role="button">Mostrar</a>
-                        <a class="btn btn-success" href="{{route("sales.edit", $s)}}" role="button">Editar</a>
-                        <a class="btn btn-danger" href="{{route("sales.destroy", $s)}}" role="button">Eliminar</a>
+                        <a class="btn btn-primary" href="{{route("sales.show", $s)}}" role="button"><i class="fa-solid fa-circle-info"></i></i></a>
+                        <a class="btn btn-success" href="{{route("sales.edit", $s)}}" role="button"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="btn btn-danger" href="{{route("sales.destroy", $s)}}" role="button"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             @endforeach

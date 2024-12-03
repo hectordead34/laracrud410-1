@@ -37,7 +37,7 @@
 
 <!-- NAVBAR de Bootstrap-->
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg" style="background-color:rgb(119, 204, 164)">
     <div class="container-fluid">
       <h3 class="navbar-brand"><i class="fa-brands fa-weibo"></i> Tiendita</h3>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
