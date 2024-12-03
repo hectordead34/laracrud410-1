@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Brands\StoreRequest;
+use App\Http\Requests\Brands\UpdateRequest;
 
 class BrandController extends Controller
 {
@@ -28,7 +29,7 @@ class BrandController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         Brand::create($request->all());
         return to_route('brands.index')->with('status', 'Marca Registrada');
@@ -54,7 +55,7 @@ class BrandController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Brand $brand)
+    public function update(UpdateRequest $request, Brand $brand)
     {
         $brand->update($request->all());//actualizamos los datos en la base de datos
         return to_route('brands.index') -> with ('status' , 'Marca Actualizada');

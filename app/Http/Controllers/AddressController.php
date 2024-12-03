@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Address;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Addresses\StoreRequest;
+use App\Http\Requests\Addresses\UpdateRequest;
 
 class AddressController extends Controller
 {
@@ -28,7 +29,7 @@ class AddressController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         Address::create($request->all());
         return to_route('addresses.index')->with('status', 'Dirección Registrada');
@@ -53,7 +54,7 @@ class AddressController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,Address $address)
+    public function update(UpdateRequest $request,Address $address)
     {
         $address->update($request->all());
         return to_route('addresses.index') -> with ('status' , 'Dirección Actualizado');

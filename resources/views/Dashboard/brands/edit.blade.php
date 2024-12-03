@@ -6,6 +6,14 @@
 
 <h1>Editar Marcas</h1>
 
+@if($errors->any())
+    @foreach ($errors->all() as $e)
+        <div class="error">
+            {{$e}}
+        </div>        
+    @endforeach
+@endif
+
 <form action="{{route('brands.update', $brand->id)}}" method="POST">
     @csrf
     @method('PUT')

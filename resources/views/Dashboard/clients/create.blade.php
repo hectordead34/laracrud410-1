@@ -6,6 +6,14 @@
 
 <h1>Create de Clientes</h1>
 
+@if($errors->any())
+    @foreach ($errors->all() as $e)
+        <div class="error">
+            {{$e}}
+        </div>        
+    @endforeach
+@endif
+
 <form action="{{route('clients.store')}}" method="POST">
     @csrf
     <label for="">Nombre del Cliente</label>
